@@ -1,0 +1,20 @@
+services:
+  planning-platform:
+    build: .
+    container_name: planning-platform
+    ports:
+      - "8000:8000"
+    volumes:
+      - platform-data:/data          # 数据库与任务结果持久化
+      # 如使用命名用户/WLS 许可，把许可目录挂进容器（按实际路径修改）：
+      # - C:/gurobi:/opt/gurobi:ro
+    environment:
+      # 命名用户许可示例（WLS）：取消注释并填入参数
+      # - WLSACCESSID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+      # - WLSSECRET=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+      # - LICENSEID=123456
+      - GRB_LICENSE_FILE=/opt/gurobi/gurobi.lic
+    restart: unless-stopped
+
+volumes:
+  platform-data:

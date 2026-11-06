@@ -1,0 +1,28 @@
+# ---- 运行期数据（不入库）----
+platform.db
+platform.db-*
+platform_data/
+output/
+dist/
+*.db.bak-*
+
+# ---- 环境与依赖 ----
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# ---- 编辑器 / 系统 ----
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# ---- 核心算法实现不随公开仓库分发 ----
+algorithm/*.py
+
+# ---- 本地工具产物 ----
+.workbuddy/
+*.log

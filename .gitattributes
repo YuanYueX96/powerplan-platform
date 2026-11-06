@@ -1,0 +1,9 @@
+# 统一换行符，避免 Windows 检出后 shell 脚本带 CRLF 无法执行
+* text=auto
+*.bat text eol=crlf
+*.sh  text eol=lf
+*.py  text eol=lf
+*.md  text eol=lf
+*.png binary
+*.jpg binary
+*.zip binary

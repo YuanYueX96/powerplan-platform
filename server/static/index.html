@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>基于市场环境的电力系统规划仿真平台</title>
+<link rel="stylesheet" href="style.css">
+<!-- 图表库随包分发，内网 / 离线机器无需外网；本地文件缺失时才回退 CDN -->
+<script src="vendor/echarts.min.js"></script>
+<script>
+  if (!window.echarts) {
+    document.write('<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"><\/script>');
+  }
+</script>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="logo"><span class="logo-icon">⚡</span><div class="logo-text">基于市场环境的<br>电力系统规划仿真平台</div></div>
+    <div class="module-title">电力系统规划</div>
+    <nav id="nav">
+      <a data-view="modeling">电力系统建模</a>
+      <a data-view="boundary">运行边界</a>
+      <a data-view="params">算法参数</a>
+      <a data-view="run">执行计算</a>
+      <a data-view="result">结果分析</a>
+      <a data-view="compare">对比分析</a>
+    </nav>
+    <div class="module-title muted">电力市场模拟 <span class="badge">预留</span></div>
+    <div class="placeholder">子模块待定义</div>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <div class="crumb" id="crumb">规划仿真</div>
+      <div class="top-actions">
+        <select class="sel" id="sys-sel"></select>
+        <button class="btn small" id="btn-new-sys">新建系统</button>
+        <span class="ver-tag" id="ver-tag"></span>
+        <button class="btn primary small" id="btn-save-ver">保存版本</button>
+      </div>
+    </header>
+    <div class="steps-bar" id="steps-bar"></div>
+    <section class="content" id="content"></section>
+  </main>
+</div>
+<div id="modal-root"></div>
+<div id="toast" class="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
